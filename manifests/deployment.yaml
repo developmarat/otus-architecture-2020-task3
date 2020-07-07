@@ -1,0 +1,55 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: task3-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: task3-app
+  template:
+    metadata:
+      labels:
+        app: task3-app
+    spec:
+      containers:
+        - name: task3
+          image: developmarat/task3:v2
+          env:
+            - name: DATABASE_HOST
+              valueFrom:
+                configMapKeyRef:
+                  name: task3-config
+                  key: DATABASE_HOST
+            - name: DATABASE_DB
+              valueFrom:
+                configMapKeyRef:
+                  name: task3-config
+                  key: DATABASE_DB
+            - name: DATABASE_USER
+              valueFrom:
+                configMapKeyRef:
+                  name: task3-config
+                  key: DATABASE_USER
+            - name: DATABASE_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: task3-secret
+                  key: DATABASE_PASSWORD
+          ports:
+            - name: web
+              containerPort: 8000
+          livenessProbe:
+            httpGet:
+              port: 8000
+              path: /health
+            initialDelaySeconds: 135
+            periodSeconds: 5
+            timeoutSeconds: 2
+          readinessProbe:
+            httpGet:
+              port: 8000
+              path: /health
+            initialDelaySeconds: 30
+            periodSeconds: 5
+            failureThreshold: 20
