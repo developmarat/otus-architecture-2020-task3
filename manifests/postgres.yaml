@@ -48,7 +48,7 @@ spec:
               valueFrom:
                 secretKeyRef:
                   name: task3-secret
-                  key: DATABASE_PASSWORD
+                  key: DATABASE_PASSWORD_WITH_NEW_LINE
           volumeMounts:
             - name: postgredb
               mountPath: /var/lib/postgresql/data
