@@ -1,7 +1,7 @@
 {
 	"info": {
-		"_postman_id": "c0eb93bc-6fe4-4357-b008-7f213a785623",
-		"name": "task3",
+		"_postman_id": "02afd80e-07c6-4fb7-b4f8-bb28692e98ad",
+		"name": "task3 copy",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
@@ -11,7 +11,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "b91df14e-54db-4a07-87c7-51510c748db0",
+						"id": "1753b799-e066-485d-9237-479b0354a321",
 						"exec": [
 							"var responseJSON = JSON.parse(responseBody)\r",
 							"pm.collectionVariables.set(\"userId\", responseJSON[\"id\"])"
@@ -193,7 +193,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "a969500b-a8ba-43fd-b1db-91bc7ba8b956",
+				"id": "58a139db-5540-4819-9997-92ba393c2b1b",
 				"type": "text/javascript",
 				"exec": [
 					""
@@ -203,7 +203,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "3fb1f8eb-a15d-491a-b2d1-7eb7d6d7e0e8",
+				"id": "49d6085b-c4b8-41bc-ae5f-64ca45bf3c24",
 				"type": "text/javascript",
 				"exec": [
 					""
@@ -213,12 +213,12 @@
 	],
 	"variable": [
 		{
-			"id": "38f33493-54f7-4fbe-881d-8cc32f8b36fa",
+			"id": "1ab3ac93-4739-4d76-ac2d-b85cab35d99c",
 			"key": "BASE_URL",
-			"value": "localhost:8000"
+			"value": "arch.homework/otusapp"
 		},
 		{
-			"id": "4ddca7c7-cb88-4583-9d53-2858e3e759e5",
+			"id": "f39f9147-87ee-4c1f-a07e-9cfa1b1745dc",
 			"key": "userId",
 			"value": ""
 		}

@@ -13,4 +13,4 @@ metadata:
   name: task3-secret
 type: Opaque
 data:
-  DATABASE_PASSWORD: cGFzc3dk
+  DATABASE_PASSWORD: cGFzc3dkCg==
